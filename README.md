@@ -1,8 +1,12 @@
 # challenge-frontend
 
+# Requirements
+
+Having the challenge-backend app running locally on port 8080.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.1.
 
-## Development server
+# Development server
 
 To start a local development server, run:
 
@@ -12,8 +16,13 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`.
 
+You can login using the following credentials :
 
-## App design
+email: guytomoki@gmail.com
+pass: 123123
+
+
+# App design
 
 The app has been implemented using angular's new standalone style without using modules.
 

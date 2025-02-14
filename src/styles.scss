@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$red-color: #eb0000;
+$custom-colors: (
+  "red": #eb0000
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import 'bootstrap/scss/bootstrap';
+// @use '../node_modules/bootstrap/scss/bootstrap';
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$dark-color: #262626;
+$dark-grey-color: #5f5f5f;
+$grey-color: #d4d4d4;
+$light-grey-color: #f1f1f1;
+$white-color: #fff;
+$light-green-color: #ebf3ed;
+$dark-green-color: #287046;
+
+
+
+.bg-dark-grey {
+  background-color: $dark-grey-color;
+}
+
+.bg-grey {
+  background-color: $grey-color;
+}
+
+.bg-light-grey {
+  background-color: $light-grey-color;
+}
+
+.bg-white {
+  background-color: $white-color;
+}
+
+.bg-light-green {
+  background-color: $light-green-color;
+}
+
+.bg-red {
+  background-color: $red-color;
+}
+
+.text-dark {
+  color: $dark-color;
+}
+
+.text-dark-green {
+  color: $dark-green-color;
+}
+
+.rounded-left-border-5 {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.rounded-border-5 {
+  border-radius: 5px 5px 5px 5px;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: $red-color !important;
+}

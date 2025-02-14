@@ -1,0 +1,1 @@
+export const settingsLanguageKey = 'settings_language';

@@ -1,0 +1,57 @@
+<div class="container d-flex justify-content-center bg-light-grey">
+  <div style="width: 400px;">
+    <div class="mt-4 mb-3 d-flex align-items-center justify-content-between">
+      <img class="align-middle" style="width: 100px;" src="images/swisssign_logo_rgb_original.svg" alt="">
+      <language-dropdown class="align-middle float-end"></language-dropdown>
+    </div>
+    <form class="bg-white p-4 rounded-border-5" [formGroup]="loginForm" (ngSubmit)="$event.preventDefault(); submitForm()" novalidate>
+      <div class="fs-3 mb-3">{{'login.title' | translate}}</div>
+      <div class="mb-3">
+        <!-- <label for="exampleInputEmail1" class="form-label">{{'login.emailAddress.title' | translate}}</label> -->
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{'login.emailAddress.title' | translate}}" formControlName="email"
+          [ngClass]="{'is-invalid': onceSubmitted && loginForm.controls.email.errors || errorI18n}">
+        @if (onceSubmitted && loginForm.controls.email.errors) {
+          <div class="invalid-feedback">
+            @if (loginForm.controls.email.hasError('required')) {
+              <span>
+                {{'login.emailAddress.required' | translate}}
+              </span>
+            } 
+            @if (loginForm.controls.email.hasError('email')) {
+              <span>
+                {{'login.emailAddress.invalid' | translate}}
+              </span>
+            }
+          </div>
+        }
+      </div>
+      <div class="mb-3">
+        <!-- <label for="exampleInputPassword1" class="form-label">{{'login.password.title' | translate}}</label> -->
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'login.password.title' | translate}}" formControlName="password"
+          [ngClass]="{'is-invalid': onceSubmitted && loginForm.controls.password.errors || errorI18n}">
+          @if (onceSubmitted && loginForm.controls.password.errors) {
+            <div class="invalid-feedback">
+              @if (loginForm.controls.password.hasError('required')) {
+                <span>
+                  {{'login.password.required' | translate}}
+                </span>
+              }
+              @if (loginForm.controls.password.hasError('minlength')) {
+                <span>
+                  {{'login.password.tooShort' | translate}}
+                </span>
+              }
+            </div> 
+          } 
+          @if (errorI18n) {
+            <div class="invalid-feedback">
+              {{errorI18n | translate}}
+            </div>
+          }
+      </div>
+      
+      <div class="d-grid">
+        <loading-button [buttonText]="'login.next'" [buttonType]="'submit'" [isLoading]="isLoading"></loading-button>
+      </div>
+    </form>
+</div>

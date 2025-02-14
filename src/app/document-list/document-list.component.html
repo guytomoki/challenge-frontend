@@ -1,0 +1,37 @@
+@for (doc of signingRequest.documents; track doc.id) {
+  <div style="margin-bottom: 2px">
+    @if (doc.isConfirmed && selectedDoc === doc) {
+      <div class="p-3 bg-light-green text-dark-green" role='button' (click)="selectDoc(doc)">
+        <mat-icon class="align-middle me-2">visibility</mat-icon>
+        <span class="align-middle">{{doc.fileName}}</span>
+        <mat-icon class="align-middle float-end">done</mat-icon>
+      </div>
+    } @else if (doc.isConfirmed && selectedDoc !== doc) {
+      <div class="p-3 bg-light-green text-dark-green" role='button' (click)="selectDoc(doc)">
+        <mat-icon class="align-middle me-2">description</mat-icon>
+        <span class="align-middle">{{doc.fileName}}</span>
+        <mat-icon class="align-middle float-end">done</mat-icon>
+      </div>
+    } @else if (!doc.isConfirmed && selectedDoc === doc) {
+        <div class="pb-3 bg-light-grey text-dark" role='button' (click)="selectDoc(doc)">
+          <div class="p-3 d-flex align-items-center">
+            <div>
+              <mat-icon class="align-middle me-2">visibility</mat-icon>
+            </div>
+            <div class="">{{doc.fileName}}</div>
+          </div>
+          <div class="ms-3 bg-red p-3 text-light rounded-left-border-5 d-flex align-items-center justify-content-between">
+            <span>{{'document.review' | translate}}</span>
+            <mat-icon>arrow_forward</mat-icon>
+          </div>
+        </div>
+    } @else {
+      <div class="p-3 bg-light-grey text-dark d-flex align-items-center" role='button' (click)="selectDoc(doc)">
+        <div>
+          <mat-icon class="align-middle me-2">description</mat-icon>
+        </div>
+        <div class="">{{doc.fileName}}</div>
+      </div>
+    }
+  </div>
+}

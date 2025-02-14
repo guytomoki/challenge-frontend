@@ -1,0 +1,40 @@
+@if (signingRequest) {
+  <div class="container-fluid px-0 d-flex h-100">
+    <div class="d-md-block sidebar bg-white col-md-4" [class.d-none]="isContentVisible">
+      <div class="h-100 d-flex flex-column justify-content-between">
+        <div>
+          <div class="p-4">
+            <div>
+              <img class="align-middle" style="width: 100px;" src="images/swisssign_logo_rgb_original.svg" alt="">
+              <language-dropdown class="align-middle float-end"></language-dropdown>
+              <mat-icon class="align-middle float-end mx-2">edit</mat-icon>
+              <mat-icon class="align-middle float-end">notifications</mat-icon>
+            </div>
+            
+            @if (signingRequest.isSigned) {
+              <p class="fs-3 mt-5" data-testid="signed-document">{{'signingRequest.signedDocuments' | translate: {documentCount} }}</p>
+            } @else {
+              <p class="fs-3 mt-5">{{'signingRequest.signingDocuments' | translate: {documentCount} }}</p>
+            }
+            <p class="fs-6">{{'signingRequest.submittedDays' | translate: {dayCount} }}</p>
+          </div>
+
+          <document-list [signingRequest]="signingRequest" [(selectedDoc)]="selectedDoc" [(isContentVisible)]="isContentVisible"></document-list>
+
+        </div>
+
+        @if (!signingRequest.isSigned) {
+          <div class="m-3">
+            <loading-button class="float-end" [buttonText]="'signingRequest.confirmSigning'" [buttonType]="'button'" [isLoading]="isConfirmSigningLoading"
+          [disabled]="isSigningDisabled()" (click)="sign()"></loading-button>
+          </div>
+        }
+      </div>
+    </div>
+    <document-container class="bg-grey content col-md-8 d-md-block" [signingRequest]="signingRequest" [(selectedDoc)]="selectedDoc" [class.d-none]="!isContentVisible"></document-container>
+  </div>
+
+  <div class="toggle-button-container position-fixed top-50 start-0 translate-middle-y" [class.d-none]="!isContentVisible">
+    <mat-icon class="menu-icon" (click)="toggleView()">menu</mat-icon>
+  </div>
+}

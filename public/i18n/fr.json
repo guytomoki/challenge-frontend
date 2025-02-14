@@ -1,0 +1,31 @@
+{
+  "genericError": "Une erreur s'est produite. Veuillez rééssayer plus tard.",
+  "login": {
+    "title": "Connexion à Swiss Post",
+    "emailAddress": {
+      "title": "Adresse email",
+      "required": "L'adresse email est requise.",
+      "invalid": "L'adresse email est non valide."
+    },
+    "password": {
+      "title": "Mot de passe",
+      "required": "Le mot de passe est requis.",
+      "tooShort": "Le mot de passe est trop court."
+    },
+    "badCredentials": "L'adresse email / le mot de passe est incorrect.",
+    "next": "Suivant"
+  },
+  "signingRequest": {
+    "signedDocuments": "{{documentCount}} documents signés",
+    "signingDocuments": "Signer {{documentCount}} documents",
+    "submittedDays": "Soumis il y a {{dayCount}} jours.",
+    "rejectAll": "Tout rejeter",
+    "confirmSigning": "Confirmer la signature"
+  },
+  "document": {
+    "review": "Vérifier le document",
+    "reviewTitle": "Vérifier le document avant confirmation",
+    "alreadyConfirmed": "Le document a déjà été confirmé",
+    "confirm": "Confirmer"
+  }
+}

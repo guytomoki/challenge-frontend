@@ -1,0 +1,6 @@
+<button class="btn btn-red w-100" type="{{buttonType}}" [disabled]="disabled || isLoading">
+  @if (isLoading) {
+    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+  }
+  <span [ngClass]="{'visually-hidden': isLoading}">{{buttonText | translate}}</span>
+</button>

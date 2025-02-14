@@ -1,0 +1,31 @@
+{
+  "genericError": "An error occurred. Please retry later.",
+  "login": {
+    "title": "Log in to Swiss Post",
+    "emailAddress": {
+      "title": "Email address",
+      "required": "Email address is required.",
+      "invalid": "Email address is invalid."
+    },
+    "password": {
+      "title": "Password",
+      "required": "Password is required.",
+      "tooShort": "Password is too short."
+    },
+    "badCredentials": "Email address / password is incorrect.",
+    "next": "Next"
+  },
+  "signingRequest": {
+    "signedDocuments": "Signed {{documentCount}} documents",
+    "signingDocuments": "Signing {{documentCount}} documents",
+    "submittedDays": "Submitted {{dayCount}} days ago.",
+    "rejectAll": "Reject all",
+    "confirmSigning": "Confirm signing"
+  },
+  "document": {
+    "review": "Review document",
+    "reviewTitle": "Review document before confirming",
+    "alreadyConfirmed": "Document has already been confirmed",
+    "confirm": "Confirm"
+  }
+}

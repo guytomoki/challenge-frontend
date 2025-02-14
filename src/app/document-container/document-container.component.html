@@ -1,0 +1,17 @@
+<div>
+  @if (selectedDoc !== undefined) {
+    <div style="height: 80px;"
+    class="bg-dark-grey text-light d-flex align-items-center justify-content-between">
+      <div class="ms-4">
+        @if (selectedDoc.isConfirmed) {
+          <span>{{'document.alreadyConfirmed' | translate}}</span>
+        } @else {
+          <span>{{'document.reviewTitle' | translate}}</span>
+        }
+      </div>
+      <loading-button class="me-4" [buttonText]="'document.confirm'" [buttonType]="'button'" [isLoading]="isLoading"
+      [disabled]="selectedDoc.isConfirmed" (click)="confirm(selectedDoc)"></loading-button>
+    </div>
+  }
+  <pdf-container></pdf-container>
+</div>

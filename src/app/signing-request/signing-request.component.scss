@@ -1,0 +1,27 @@
+.toggle-button-container {
+  display: none;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .toggle-button-container {
+    display: block;
+  }
+
+  .sidebar,
+  .content {
+    width: 100%;
+  }
+}
+
+.menu-icon {
+  color: white;
+  background-color: #e80001;
+  font-size: 50px;
+  height: 50px;
+  width: 60px;
+  padding-left: 5px;
+  border-radius: 0px 10px 10px 0px;
+}

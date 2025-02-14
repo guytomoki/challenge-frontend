@@ -1,0 +1,11 @@
+<div ngbDropdown class="alignRight">
+  <mat-icon ngbDropdownToggle>language</mat-icon>
+  <div ngbDropdownMenu class="language-menu pull-right animated fadeInRight m-t-xs">
+    @for (language of internationalizationService.availableLanguages; track language) {
+      <a ngbDropdownItem [ngClass]="{active: internationalizationService.getCurrentLanguage() == language}"
+       (click)="internationalizationService.use(language)">
+        {{language}}
+      </a>
+    }
+  </div>
+</div>

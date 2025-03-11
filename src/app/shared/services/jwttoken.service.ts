@@ -74,4 +74,9 @@ export class JWTTokenService {
         return false;
       }
     }
+
+    clearTokens() {
+      this.jwtToken = '';
+      this.jwtRefreshToken = '';
+    }
 }

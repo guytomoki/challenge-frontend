@@ -18,6 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
             console.log("isRefreshTokenExpired()", this.jwtTokenService.isRefreshTokenExpired());
             if (this.jwtTokenService.isTokenExpired() && jwtRefreshToken) {
                 if (this.jwtTokenService.isRefreshTokenExpired()) {
+                    this.jwtTokenService.clearTokens();
                     this.router.navigate(['/login']);
                     return EMPTY;
                 }
